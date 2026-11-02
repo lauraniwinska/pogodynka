@@ -1,0 +1,52 @@
+App\Entity\Location:
+    # config/validator/validation.yaml
+    properties:
+        latitude:
+            -   Range:
+                    min: -90
+                    max: 90
+                    notInRangeMessage: You must be between {{ min }} and {{ max }} degrees latitude
+                    groups: [new, edit]
+        longitude:
+            -   Range:
+                    min: -180
+                    max: 180
+                    notInRangeMessage: You must be between {{ min }} and {{ max }} degrees longitude
+                    groups: [new, edit]
+        name:
+            -   NotBlank:
+                    message: Name cannot be blank
+                    groups: [new, edit]
+        country:
+            -   NotBlank:
+                    message: Country cannot be blank
+                    groups: [new, edit]
+
+App\Entity\Measurement:
+    properties:
+        temperature:
+            -   Range:
+                    min: -80
+                    max: 80
+                    notInRangeMessage: You must be between {{ min }} and {{ max }} degrees Celsius
+                    groups: [new, edit]
+        pressure:
+            -   Range:
+                    min: 870
+                    max: 1085
+                    notInRangeMessage: You must be between {{ min }} and {{ max }} hPa
+                    groups: [new, edit]
+        precipitation:
+            -   Range:
+                    min: 0
+                    max: 500
+                    notInRangeMessage: You must be between {{ min }} and {{ max }} mm
+                    groups: [new, edit]
+        cloudiness:
+            -   NotBlank:
+                    message: Cloudiness cannot be blank
+                    groups: [new, edit]
+        date:
+            -   NotBlank:
+                    message: Date cannot be blank
+                    groups: [new, edit]

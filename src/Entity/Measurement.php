@@ -55,7 +55,7 @@ class Measurement
         return $this->date;
     }
 
-    public function setDate(\DateTime $date): static
+    public function setDate(?\DateTime $date): static
     {
         $this->date = $date;
 
@@ -67,7 +67,7 @@ class Measurement
         return $this->temperature;
     }
 
-    public function setTemperature(int $temperature): static
+    public function setTemperature(?int $temperature): static
     {
         $this->temperature = $temperature;
 
