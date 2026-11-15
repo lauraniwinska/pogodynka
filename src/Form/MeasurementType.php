@@ -23,7 +23,6 @@ class MeasurementType extends AbstractType
                 ],
             ])
             ->add('temperature', NumberType::class, [
-                'html5' => true,
                 'attr' => [
                     'placeholder' => 'Enter temperature', 'min' => '-80', 'max' => '80'
                 ],
@@ -34,13 +33,11 @@ class MeasurementType extends AbstractType
                 ],
             ])
             ->add('pressure', NumberType::class, [
-                'html5' => true,
                 'attr' => [
                     'placeholder' => 'Enter pressure','min' => '870', 'max' => '1085'
                 ],
             ])
             ->add('precipitation', NumberType::class, [
-                'html5' => true,
                 'attr' => [
                     'placeholder' => 'Enter precipitation','min' => '0', 'max' => '500'
                 ],
